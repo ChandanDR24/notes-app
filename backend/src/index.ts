@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin:"https://https://notes-app-steel-two.vercel.app",  // allow only your frontend
+  origin:"https://notes-app-steel-two.vercel.app",  // allow only your frontend
   credentials: true                // allow cookies/headers
 }));
 app.use(express.json());
