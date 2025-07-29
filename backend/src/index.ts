@@ -15,8 +15,6 @@ const app = express();
 app.use(cors({
   origin:"https://notes-app-steel-two.vercel.app/",  // allow only your frontend
   credentials: true,
-  methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
