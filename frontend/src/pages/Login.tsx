@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  Link
 } from "@chakra-ui/react";
 import OTPForm from "../components/OTPForm";
 import GoogleLoginButton from "../components/GoogleLoginButton";
