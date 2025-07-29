@@ -4,8 +4,10 @@ import { authMiddleware } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
-router.post("/", createNote);
-router.get("/", getNotes);
-router.delete("/:id", deleteNote);
+// ✅ Protect all note routes with authMiddleware
+router.post("/", authMiddleware, createNote);
+router.get("/", authMiddleware, getNotes);
+router.delete("/:id", authMiddleware, deleteNote);
 
 export default router;
+
