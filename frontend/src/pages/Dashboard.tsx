@@ -17,6 +17,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import api from"../services/api";
 
 
 type Note = {
@@ -35,7 +36,7 @@ const Dashboard = () => {
   const fetchNotes = async () => {
     console.log("Token used:", localStorage.getItem("token"));
     try {
-      const res = await axios.get("https://notes-app-x9br.onrender.com/api/notes", {
+      const res = await api.get("https://notes-app-x9br.onrender.com/api/notes", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setNotes(res.data);
@@ -52,7 +53,7 @@ const Dashboard = () => {
     }
 
     try {
-      await axios.post(
+      await api.post(
         "https://notes-app-x9br.onrender.com/api/notes",
         { title: newTitle, content: newContent },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
@@ -69,7 +70,7 @@ const Dashboard = () => {
 
   const handleDeleteNote = async (id: string) => {
     try {
-      await axios.delete(`https://notes-app-x9br.onrender.com/api/notes/${id}`, {
+      await api.delete(`https://notes-app-x9br.onrender.com/api/notes/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       toast.info("Note deleted");
