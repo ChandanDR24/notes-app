@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://notes-app-x9br.onrender.com/api",
   withCredentials: true, // 🔐 to send cookies
 });
 
@@ -20,7 +20,7 @@ api.interceptors.response.use(
     if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
       try {
-        const res = await axios.post("http://localhost:5000/api/auth/refresh-token", {}, { withCredentials: true });
+        const res = await axios.post("https://notes-app-x9br.onrender.com/api/auth/refresh-token", {}, { withCredentials: true });
         const newToken = res.data.token;
         localStorage.setItem("token", newToken);
         originalRequest.headers.Authorization = `Bearer ${newToken}`;
