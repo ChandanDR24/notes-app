@@ -17,6 +17,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import api from "../api";
 
 type Note = {
   _id: string;
@@ -51,7 +52,7 @@ const Dashboard = () => {
     }
 
     try {
-      await axios.post(
+      await api.post(
         "https://notes-app-x9br.onrender.com/api/notes",
         { title: newTitle, content: newContent },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
