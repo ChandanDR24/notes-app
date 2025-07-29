@@ -32,6 +32,7 @@ const Dashboard = () => {
   const [newContent, setNewContent] = useState("");
 
   const fetchNotes = async () => {
+    console.log("Token used:", localStorage.getItem("token"));
     try {
       const res = await axios.get("https://notes-app-x9br.onrender.com/api/notes", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -43,6 +44,7 @@ const Dashboard = () => {
   };
 
   const handleCreateNote = async () => {
+    console.log("Token used:", localStorage.getItem("token"));
     if (!newTitle.trim() || !newContent.trim()) {
       toast.warn("Please fill in both fields.");
       return;
