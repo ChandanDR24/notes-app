@@ -26,11 +26,11 @@ const OTPForm = () => {
     if (!email) return toast.info("Please enter your email");
     setLoading(true); // start loading
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/check-email", { email });
+      const res = await axios.post("https://notes-app-x9br.onrender.com/api/auth/check-email", { email });
       const exists = res.data.exists;
 
       if (exists) {
-        await axios.post("http://localhost:5000/api/auth/send-otp", { email }, { withCredentials: true });
+        await axios.post("https://notes-app-x9br.onrender.com/api/auth/send-otp", { email }, { withCredentials: true });
         toast.success("OTP sent to your email");
         setStep("otp");
       } else {
@@ -48,7 +48,7 @@ const OTPForm = () => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/send-otp",
+        "https://notes-app-x9br.onrender.com/api/auth/send-otp",
         { email, name, dob },
         { withCredentials: true }
       );
@@ -66,7 +66,7 @@ const OTPForm = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        "https://notes-app-x9br.onrender.com/api/auth/verify-otp",
         { email, otp },
         { withCredentials: true }
       );
