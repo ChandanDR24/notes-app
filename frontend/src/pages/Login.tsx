@@ -6,7 +6,9 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  Link,
 } from "@chakra-ui/react";
+import { LuExternalLink } from "react-icons/lu"
 import OTPForm from "../components/OTPForm";
 import GoogleLoginButton from "../components/GoogleLoginButton";
 
@@ -53,6 +55,11 @@ const Login = () => {
 
             <GoogleLoginButton />
           </Stack>
+          <Box flex="1" mt={4}>
+          <Link href="https://github.com/ChandanDR24/notes-app/" color="black">
+            GitHub<LuExternalLink />
+          </Link>
+          </Box>
         </Box>
       </Flex>
 
