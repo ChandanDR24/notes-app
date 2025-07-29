@@ -10,14 +10,10 @@ import googleAuthRoutes from "./routes/auth.routes";
 import noteRoutes from "./routes/note.routes";
 
 dotenv.config();
-const allowedOrigins = [
-  "http://localhost:5173", // Vite
-  "https://https://notes-app-steel-two.vercel.app",
-];
 
 const app = express();
 app.use(cors({
-  origin: allowedOrigins,  // allow only your frontend
+  origin:"https://https://notes-app-steel-two.vercel.app",  // allow only your frontend
   credentials: true                // allow cookies/headers
 }));
 app.use(express.json());
