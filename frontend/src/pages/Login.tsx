@@ -1,15 +1,11 @@
 // src/pages/Login.tsx
 import {
   Box,
-  Button,
   Flex,
-  Heading,
   Image,
-  Link,
   Stack,
   Text,
   useBreakpointValue,
-  Checkbox,
 } from "@chakra-ui/react";
 import OTPForm from "../components/OTPForm";
 import GoogleLoginButton from "../components/GoogleLoginButton";
