@@ -56,13 +56,13 @@ router.get(
       const email = existingUser.email;
       // ✅ Redirect to frontend with access token and name
       res.redirect(
-        `http://localhost:5173/dashboard?token=${accessToken}&name=${encodeURIComponent(
+        `https://notes-app-steel-two.vercel.app/dashboard?token=${accessToken}&name=${encodeURIComponent(
           name
         )}&email=${encodeURIComponent(email)}`
       );
     } catch (err) {
       console.error("Google login failed:", err);
-      res.redirect("http://localhost:5173/login?error=google_login_failed");
+      res.redirect("https://notes-app-steel-two.vercel.app/login?error=google_login_failed");
     }
   }
 );
