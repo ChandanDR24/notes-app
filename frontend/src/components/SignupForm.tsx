@@ -16,7 +16,7 @@ const SignupForm = ({ email }: { email: string }) => {
 
   const sendOtp = async () => {
     try {
-      await axios.post("http://localhost:5000/api/auth/send-otp", {
+      await axios.post("https://notes-app-x9br.onrender.com/api/auth/send-otp", {
         email,
         name,
         dob,
@@ -32,7 +32,7 @@ const SignupForm = ({ email }: { email: string }) => {
   const verifyOtp = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        "https://notes-app-x9br.onrender.com/api/auth/verify-otp",
         { email, otp },
         { withCredentials: true }
       );
