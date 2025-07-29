@@ -6,7 +6,6 @@ import {
   Stack,
   Text,
   useBreakpointValue,
-  Link
 } from "@chakra-ui/react";
 import OTPForm from "../components/OTPForm";
 import GoogleLoginButton from "../components/GoogleLoginButton";
@@ -54,17 +53,6 @@ const Login = () => {
 
             <GoogleLoginButton />
           </Stack>
-          <Text mt={6} fontSize="sm" textAlign="center" color="gray.500">
-            github
-            <Link
-              href="https://github.com/ChandanDR24/notes-app"
-              color="blue.500"
-              isExternal
-              textDecoration="underline"
-            >
-              GitHub
-            </Link>
-          </Text>
         </Box>
       </Flex>
 
