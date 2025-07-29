@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import { MdDelete } from "react-icons/md";
 import { useEffect, useState } from "react";
-
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
