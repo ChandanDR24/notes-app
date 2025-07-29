@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 
 const GoogleLoginButton = () => {
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    window.location.href = "https://notes-app-x9br.onrender.com/auth/google";
   };
 
   return (
