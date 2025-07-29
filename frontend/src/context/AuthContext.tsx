@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
     } else {
       axios
-        .post("http://localhost:5000/api/auth/refresh-token", {}, { withCredentials: true })
+        .post("https://notes-app-x9br.onrender.com/api/auth/refresh-token", {}, { withCredentials: true })
         .then((res) => {
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("name", res.data.name);
