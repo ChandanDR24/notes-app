@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   const fetchNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notes", {
+      const res = await axios.get("https://notes-app-x9br.onrender.com/api/notes", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setNotes(res.data);
@@ -50,7 +50,7 @@ const Dashboard = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/notes",
+        "https://notes-app-x9br.onrender.com/api/notes",
         { title: newTitle, content: newContent },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   const handleDeleteNote = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${id}`, {
+      await axios.delete(`https://notes-app-x9br.onrender.com/api/notes/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       toast.info("Note deleted");
